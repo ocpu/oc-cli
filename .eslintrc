@@ -1,0 +1,27 @@
+{
+    "env": {
+        "browser": false,
+        "commonjs": false,
+        "es6": false,
+        "node": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2017,
+        "sourceType": "module"
+    },
+    "rules": {
+        "semi": "off",
+        "no-const-assign": "error",
+        "no-this-before-super": "error",
+        "no-undef": "warn",
+        "no-unreachable": "error",
+        "no-unused-vars": "warn",
+        "constructor-super": "error",
+        "valid-typeof": "warn",
+        "eol-last":"warn",
+        "brace-style":"warn",
+        "eqeqeq":"warn",
+        "no-debugger":"warn",
+        "no-new-symbol":"error"
+    }
+}

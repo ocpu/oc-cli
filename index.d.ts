@@ -1,9 +1,25 @@
 declare interface Program {
     /**
-     * Setup how to use your cli
-     * @param usage [...] = optional, <...> = required, ... = cmd | options | name
+     * Setup how to use your cli.
+     * SET NAME OF CLI FIRST.
+     * 
+     * [] = optional, <> = required
+     * cmd | options | args (include '...' after to capture rest)
+     * @param usage How to use your cli.
      */
     usage(usage: string): Program
+    /**
+     * Set a version for your cli.
+     * @param version The current version.
+     * @param customFlags Set a custom flag to get the version.
+     */
+    version(version: string, customFlags?: string)
+    /**
+     * Set a custom help message.
+     * @param customFlags Set a custom flag to get the version.
+     * @param message Set the custom help message.
+     */
+    help(customFlags?: string, message?: string)
 
     /**
      * Set a option for the program or a command
@@ -39,7 +55,3 @@ declare interface Program {
 }
 
 export = Program
-
-declare module "oc-cli" {
-    export = Program
-}
