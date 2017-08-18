@@ -12,14 +12,16 @@ declare interface Program {
      * Set a version for your cli.
      * @param version The current version.
      * @param customFlags Set a custom flag to get the version.
+     * @see Program#option
      */
-    version(version: string, customFlags?: string)
+    version(version: string, customFlags?: string): Program
     /**
      * Set a custom help message.
      * @param customFlags Set a custom flag to get the version.
      * @param message Set the custom help message.
+     * @see Program#option
      */
-    help(customFlags?: string, message?: string)
+    help(customFlags?: string, message?: string): Program
 
     /**
      * Set a option for the program or a command
@@ -28,9 +30,8 @@ declare interface Program {
      * There are two ways to get values if they are there or not or has a value attached.
      * Like "-f, --force" for true or false or "-n, --name <name>" to get a value of it.
      * @param description Set a help description for the option.
-     * @param validation Set a validation method.
      */
-    option(name: string, flags: string, description?: string, validation?: RegExp | ((value: string) => void)): Program
+    option(name: string, flags: string, description?: string): Program
     /**
      * Set what to do when to the program/command is called.
      * @param executor What to do when it is executed.
@@ -54,4 +55,10 @@ declare interface Program {
 
 }
 
-export = Program
+declare var program: Program
+
+export = program
+
+module "ocli" {
+    export = program
+}

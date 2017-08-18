@@ -2,7 +2,7 @@
     "env": {
         "browser": false,
         "commonjs": false,
-        "es6": false,
+        "es6": true,
         "node": true
     },
     "parserOptions": {
